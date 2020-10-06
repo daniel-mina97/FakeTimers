@@ -3,9 +3,16 @@ import { throttleFunction } from '../src/index';
 
 let clock: any;
 
+// Timestamps that work:
+// const timestamp = 160148896900;
+// const timestamp = 16014889690000;
+
+// Timestamps that DO NOT work:
+const timestamp = 1601488969000;
+
 describe('Test Suite', () => {
   beforeAll(() => {
-    clock = FakeTimers.install({ now: 1601488969000, shouldAdvanceTime: true });
+    clock = FakeTimers.install({ now: timestamp, shouldAdvanceTime: true });
   });
 
   afterAll(() => {
